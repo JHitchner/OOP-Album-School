@@ -14,13 +14,14 @@ Album.prototype.addPhotos = function (photo) {
 };
 //The function that will list all photos in the album
 Album.prototype.listPhotos = function() {
-   for (var i = 0; i <this.pictures.length; i++ ) {
-     console.log(this.pictures[i]);
-   };
+  for (var i = 0; i <this.pictures.length; i++ ) {
+    console.log(this.pictures[i]);
+  };
 };
 // The function that will get a photo in the order it was added
 Album.prototype.getPhotos = function(index) {
-   console.log(this.pictures[index - 1]);
+//Calling on the first element uses 1 not 0. Done with user in mind.
+  console.log(this.pictures[index - 1]);
 };
 
 // Instantiated Album
@@ -30,10 +31,10 @@ var photoOne = new Photo( "Christmas Morning","Home");
 var photoTwo = new Photo ("Halloween Time", "Haunted Lake");
 var photoThree = new Photo ("First Day of Camp", "Weird School");
 
-// My logs to demonstrate it is working
-console.log(albumOne.addPhotos(photoOne));
-console.log(albumOne.addPhotos(photoTwo));
-console.log(albumOne.addPhotos(photoThree));
+
+albumOne.addPhotos(photoOne);
+albumOne.addPhotos(photoTwo);
+albumOne.addPhotos(photoThree);
 console.log(albumOne.pictures.length)
 
 albumOne.listPhotos();
